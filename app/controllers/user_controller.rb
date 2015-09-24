@@ -20,10 +20,10 @@ post '/login' do
     erb :'user_login'
   else 
     auth_login(@user)
-    @my_places = Website.where(user_id: session[:user_id])
-    flash[:message] = 'Thank you for logging in'
+    # @my_places = Website.where(user_id: session[:user_id])
+    # flash[:message] = 'Thank you for logging in'
 
-    erb :'/dashboard/index'
+    redirect '/dashboard/'
   end
 
 end
@@ -49,7 +49,7 @@ post '/signup' do
 		@user = User.create(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], birthday: @birthday, gender: params[:gender])
 		auth_login(@user)
 
-		erb :'/dashboard/index'
+		redirect '/dashboard/'
 	end
 end
 

@@ -13,5 +13,5 @@ get '/dashboard' do
 		@my_places = ["You don't have any websites to load."]
 	end.to_a
 
-	erb :'/dashboard/index'
+	erb :'/dashboard/index', :layout => true
 end

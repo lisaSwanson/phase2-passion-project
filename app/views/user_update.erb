@@ -1,0 +1,41 @@
+<div class="well update">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#home" data-toggle="tab">Profile</a></li>
+      <li><a href="#profile" data-toggle="tab">Password</a></li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane active in" id="home">
+        <form id="tab" action="/user/update" method="post">
+            <!-- <label>Username</label>
+            <input type="text" name="user_name" value="" class="input-xlarge"> -->
+            <label>First Name</label>
+            <input type="text" name="first_name"value="<%= @user.first_name %>" class="input-xlarge">
+            <label>Last Name</label>
+            <input type="text" name="last_name" value="<%= @user.last_name %>" class="input-xlarge">
+            <label>Email</label>
+            <input type="text" name="email" value="<%= @user.email %>" class="input-xlarge">
+            <fieldset
+            <legend>Birth Date:</legend> 
+            <input type="text" name="year" value="<%= @birthday.year %>" class="input-xlarge">
+            <input type="text" name="month" value="<%= @birthday.month %>" class="input-xlarge">
+            <input type="text" name="day" value="<%= @birthday.day %>" class="input-xlarge">
+
+            </div>
+              <button class="btn btn-primary">Update</button>
+          </div>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="profile">
+      <form id="tab2">
+          <label>Current Password</label>
+          <input type="password" class="input-xlarge">
+          <label>New Password</label>
+          <input type="password_new" class="input-xlarge">          
+          <label>Confirm New Password</label>
+          <input type="password_confirm" class="input-xlarge">
+          <div>
+              <button class="btn btn-primary">Update</button>
+          </div>
+      </form>
+      </div>
+  </div>

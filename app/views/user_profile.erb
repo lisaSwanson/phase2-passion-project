@@ -1,0 +1,35 @@
+<br><br>
+<div class="container-fluid well span6">
+	<div class="row-fluid">
+        <div class="span2" >
+		    <img src="" class="img-circle">
+        </div>
+        
+        <div class="span8">
+            <h3><%= @user.first_name%>&nbsp;<%= @user.last_name%></h3>
+            <h6><%= @user.email %></h6>
+            <h6><%= @user.birthday %></h6>
+            <h6><%= @age %></h6>
+            <%if @user.gender == "M"%>
+            	<h6>Male</a></h6>
+            <%elsif @user.gender == "F"%>
+            	<h6>Female</a></h6>
+            <%else%>
+                <h6>They</a></h6>
+            <%end%>
+        </div>
+        
+        <div class="span2">
+            <div class="btn-group">
+                <a class="btn dropdown-toggle btn-info" data-toggle="dropdown" href="#">
+                    Action 
+                    <span class="icon-cog icon-white"></span><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="update"><span class="icon-wrench"></span> Modify</a></li>
+                    <li><a href="/delete"><span class="icon-trash"></span> Delete</a></li>
+                </ul>
+            </div>
+        </div>
+</div>
+</div>

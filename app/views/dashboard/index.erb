@@ -1,0 +1,51 @@
+<div class="dashboard_container">
+	<h3>user dashboard page</h3>
+	<div class="div_add_url">
+		<form class="add_url_form" action="/dashboard/new" method="post">
+			<input type="text" class="form-control" name="url" placeholder="URL here" required="">
+			<button class="btn btn-sm btn-primary btn-block" type="submit">
+				Add One
+			</button>
+		</form>
+	</div>
+	<% if @my_places %>
+	<% @my_places.each_with_index do |url, i| %>
+	<div class="inset_<%=i%>"><a href="<%= url.social_media_link %>" ><%= url.social_media_link %></a>
+	</div>
+	<% end %>
+	<% end %>
+
+	<div id="social">
+		<ul>
+			<li>
+				<iframe src="//www.facebook.com/plugins/like.php?href=http://www.inwebson.com/jquery/jqfloat-js-a-floating-effect-with-jquery/&amp;send=false&amp;layout=box_count&amp;width=45&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=60&amp;appId=289664664400992" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:45px; height:60px;" allowTransparency="true"></iframe>	
+			</li>
+			<li>	
+				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.inwebson.com/jquery/jqfloat-js-a-floating-effect-with-jquery/" data-via="inwebson" data-count="vertical">Tweet</a>
+
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+			</li>
+			<li>
+				<!-- Place this tag where you want the +1 button to render -->
+				<g:plusone size="tall" href="http://www.inwebson.com/jquery/jqfloat-js-a-floating-effect-with-jquery/"></g:plusone>
+
+				<!-- Place this render call where appropriate -->
+				<script type="text/javascript">
+					(function() {
+						var po = document.createElement('script'); po.type ='text/javascript'; po.async = true;
+						po.src = 'https://apis.google.com/js/plusone.js';
+						var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+					})();
+				</script>
+			</li>
+			<li>
+				<a href="http://pinterest.com/pin/create/button/?url=http://www.inwebson.com/jquery/jqfloat-js-a-floating-effect-with-jquery/&media=http://www.inwebson.com/wp-content/uploads/2012/03/jqfloat-jquery-plugin.png" class="pin-it-button" count-layout="vertical">Pin It</a>
+				<script type="text/javascript" src="http://assets.pinterest.com/js/pinit.js"></script>
+			</li>
+		</ul>
+	</div>
+
+</div>
+
+

@@ -23,7 +23,7 @@ post '/login' do
     # @my_places = Website.where(user_id: session[:user_id])
     # flash[:message] = 'Thank you for logging in'
 
-    redirect '/dashboard/'
+    redirect '/dashboard'
   end
 
 end

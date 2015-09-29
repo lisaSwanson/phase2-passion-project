@@ -1,5 +1,10 @@
 helpers do
 
+  # define a current_user method, so we can be sure if an user is authenticated
+  def current_user
+    !session[:uid].nil?
+  end
+
   def auth_logged_in?
     !session[:user_id].nil?
   end

@@ -7,12 +7,16 @@ gem 'pg'
 gem 'sinatra'
 gem 'sinatra-contrib'
 gem 'sinatra-flash'
+gem 'omniauth-twitter'
+gem 'json'
 
 gem 'activesupport'
 gem 'activerecord'
 gem 'bcrypt'
 gem 'httparty'
 gem 'rake'
+gem 'twitter', '~> 5.15.0'
+gem 'dotenv'
 
 gem 'shotgun'
 

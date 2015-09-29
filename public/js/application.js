@@ -8,9 +8,9 @@ $(document).ready(function() {
 		// console.log(this);
 		// alert('Sign new href executed.'); 
     $('.add_url_form').show();
+
   });
 
-  
 	$('#social').jqFloat({
 		width: 150,
 		height: 200,
@@ -46,8 +46,6 @@ $(document).ready(function() {
 		height: 200,
 		speed: 1500
 	});
-
-
 });
 
 // function showFormURLAdd(){

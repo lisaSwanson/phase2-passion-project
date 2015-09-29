@@ -14,6 +14,11 @@ require 'httparty'
 require 'pg'
 require 'active_record'
 require 'logger'
+require 'dotenv'
+Dotenv.load
+require 'twitter'
+require 'omniauth-twitter'
+require 'json'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
@@ -35,6 +40,9 @@ configure do
 
   # Set the views to
   set :views, File.join(Sinatra::Application.root, "app", "views")
+  use OmniAuth::Builder do
+  provider :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET']
+  end
 end
 
 # Set up the controllers and helpers

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <a href="/logout">Logout</a><br/>
+    <hr/>
+    <h2>Access Token</h2>
+    <pre><%= JSON.pretty_generate(@oauth) %></pre>
+    <hr/>
+    <h2>Home Timeline</h2>
+    <% @timeline.each do |tweet| %>
+      <!--<pre><%= JSON.pretty_generate(tweet.attrs) %></pre>-->
+      <p><%= tweet.text %> by @<%= tweet.user.screen_name %></p>
+    <% end %>
+  </body>
+</html>

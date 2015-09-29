@@ -15,7 +15,7 @@
     -->
     <link rel="stylesheet" href="/css/application.css">
     <!-- Load Vollkorn font -->
-    <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
 
     <!-- // <script src="https://code.jquery.com/jquery.js"></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -27,51 +27,8 @@
   <body>
 
     <!--Navbar--> 
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" "active" href="#">My Cosmos</a>
-      </div>
-      <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav">
-          <li class=""><a href="/">Home</a></li>
-          <li><a href="#">About</a></li>
-          <% if session[:user_id].nil? %>
-          <li><a href="/login">Login</a></li>
-          <li><a href="/signup">Sign Up</a></li>
-          <% else %>
-          <% @user = User.find(session[:user_id]) %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">welcome back&nbsp;<%= @user.first_name %><b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><a href="/dashboard">Dashboard</a></li>
-              <% if @add_url %>
-              <li><a href="add_url">Add Places</a></li>
-              <% end %>
-              <li><a href="/logout">Logout</a></li>
-              <li><a href="/profile">Profile</a></li>
-            </ul>
-          </li>
-          <% end %>
+    <%= erb :'_nav_bar' %>
 
-          <% if @add_url %>
-          <%  @my_place = Website.where(user_id: session[:user_id]) %>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">My Places<b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <% @my_place.each do |url| %>
-              <li><a href="<%=url.social_media_link %>"><%= url.social_media_link %></a></li>
-              <% end %>
-              <% end %>
-            </ul>
-          </li>
-        </div>  
-      </div>
 
       <div class="container">
 

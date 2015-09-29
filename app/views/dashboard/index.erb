@@ -10,7 +10,7 @@
 	</div>
 	<% if @my_places %>
 	<% @my_places.each_with_index do |url, i| %>
-	<div class="inset_<%=i%>"><a href="<%= url.social_media_link %>" ><%= url.social_media_link %></a>
+	<div class="inset_<%=i%>" id=''><a href="<%= url.social_media_link %>" ><%= url.social_media_link %></a>
 	</div>
 	<% end %>
 	<% end %>
